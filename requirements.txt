@@ -6,3 +6,6 @@ mypy==0.*
 mypy-extensions==0.4.*
 pycodestyle==2.8.*
 tox==3.24.*
+numpy==1.21.*
+pydantic==1.8.*
+typer==0.4.*
