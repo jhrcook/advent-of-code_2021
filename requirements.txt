@@ -1,0 +1,8 @@
+black==21.*
+flake8==4.0.*
+flit==3.5.*
+isort==5.10.*
+mypy==0.*
+mypy-extensions==0.4.*
+pycodestyle==2.8.*
+tox==3.24.*
