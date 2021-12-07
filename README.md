@@ -16,6 +16,7 @@
 | 3   | [advent_of_code/challenges/day03.py](advent_of_code/challenges/day03.py) | ⭐️⭐️   |
 | 4   | [advent_of_code/challenges/day04.py](advent_of_code/challenges/day04.py) | ⭐️⭐️   |
 | 5   | [advent_of_code/challenges/day05.py](advent_of_code/challenges/day05.py) | ⭐️⭐️   |
+| 6   | [advent_of_code/challenges/day06.py](advent_of_code/challenges/day06.py) | ⭐️⭐️   |
 
 ## Details
 

@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+from collections import Counter
+from functools import cache
 from typing import Final, Optional
+
+import numpy as np
 
 from advent_of_code.checks import check_answer, check_example
 from advent_of_code.cli_output import print_single_answer
@@ -92,11 +96,19 @@ class LanternFishPopulation:
 
     def __str__(self) -> str:
         """Human-readable description of the population."""
-        return f"After {self.day:2d} days: {len(self)} fish"
+        return f"After {self.day:3d} days: {len(self)} fish"
 
     def __repr__(self) -> str:
         """Human-readable description of the population."""
         return str(self)
+
+    def show(self) -> None:
+        """Display a population of fish ages."""
+        fishes = ", ".join([str(f) for f in self.lanternfishes])
+        print(f"After {self.day:3d} days: {fishes}")
+
+
+# ---- Data parsing ---- #
 
 
 def _parse_lanternfish_ages_str(age_str: str) -> list[LanternFish]:
@@ -111,6 +123,70 @@ def _get_lanternfish_ages_data() -> LanternFishPopulation:
     return LanternFishPopulation(fish)
 
 
+# ---- Part 2 ---- #
+
+
+def _split_up_days(n_days: int, by: int) -> list[int]:
+    if n_days < by:
+        return [n_days]
+    split_days = [by] * (n_days // by)
+    rem = n_days % by
+    if rem > 0:
+        split_days += [rem]
+    return split_days
+
+
+@cache
+def age_fish(fish: int, days: int) -> np.ndarray:
+    """Age a single fish (memoized).
+
+    Args:
+        fish (int): Fish to age.
+        days (int): Number of days to age the fish.
+
+    Returns:
+        np.ndarray: Resulting population of lanterfish.
+    """
+    ary = np.asarray([fish], dtype=int)
+    for _ in range(days):
+        ary = ary - 1
+        idx = ary == -1
+        ary[idx] = 6
+        ary = np.hstack([ary, np.zeros(np.sum(idx), dtype=int) + 8])
+    return ary
+
+
+def age_a_population(
+    population: LanternFishPopulation, days: int, day_split: int = 128
+) -> int:
+    """Age a population of lanternfish.
+
+    While this is not a readable as the nice abstraction above, it is **far** more
+    efficient and takes way less time to run for larger values of `days`.
+
+    Args:
+        population (LanternFishPopulation): Population of lanternfish.
+        days (int): Days to age.
+        day_split (int, optional): Split of day (recommend a value below 150 and an even
+        split of the total number of days). Defaults to 128 (to go well with 256 days).
+
+    Returns:
+        int: Number of fish after the number of days.
+    """
+    fishes = np.array([f.age for f in population.lanternfishes], dtype=int)
+    fish_age_count: Counter = Counter(fishes)
+    for days_chunk in _split_up_days(days, day_split):
+        new_fish_ages: Counter = Counter()
+        for age, n_fish in fish_age_count.items():
+            new_fish_ages += Counter(
+                {  # type: ignore
+                    a: n * n_fish for a, n in Counter(age_fish(age, days_chunk)).items()
+                }
+            )
+        fish_age_count = new_fish_ages
+    return sum(list(fish_age_count.values()))
+
+
 def main() -> None:
     """Run code for day 6 challenge."""
     # Part 1.
@@ -122,6 +198,19 @@ def main() -> None:
     n_fish = len(fishes)
     print_single_answer(DAY, 1, n_fish)
     check_answer(351092, n_fish, DAY, 1)
+
+    # Part 2.
+    ex_fishes = LanternFishPopulation(_parse_lanternfish_ages_str(_ex_lanternfish_ages))
+    ex_n_fish = age_a_population(ex_fishes, 80, day_split=40)
+    check_example(5934, ex_n_fish)
+    ex_n_fish = age_a_population(ex_fishes, 256, day_split=128)
+    check_example(26984457539, ex_n_fish)
+    fishes = _get_lanternfish_ages_data()
+    n_fish = age_a_population(fishes, 256, day_split=128)
+    print_single_answer(DAY, 2, n_fish)
+    check_answer(1595330616005, n_fish, DAY, 2)
+
+    return None
 
 
 if __name__ == "__main__":
