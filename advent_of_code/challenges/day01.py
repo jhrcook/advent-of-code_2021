@@ -65,7 +65,8 @@ def make_sliding_window(sonar_sweep: list[int], width: int = 3) -> list[int]:
     return new_sonar_sweep
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Execute code for day 1."""
     # Data.
     test_sonar_sweep = _parse_sonar_sweep_data(_test_sonar_sweep_report)
     sonar_sweep_report = _read_sonar_sweep_data(get_data_path(DAY))
@@ -83,5 +84,9 @@ if __name__ == "__main__":
     check_example(5, test_res)
     windowed_sonar_sweep = make_sliding_window(sonar_sweep_report)
     answer2 = count_increases(windowed_sonar_sweep)
-    check_answer(1252, answer1, day=DAY, part=2)
+    check_answer(1252, answer2, day=DAY, part=2)
     print_single_answer(DAY, 2, answer2)
+
+
+if __name__ == "__main__":
+    main()

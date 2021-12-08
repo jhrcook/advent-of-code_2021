@@ -137,7 +137,8 @@ def _parse_diagnostic_report_file() -> list[list[bool]]:
     return report
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Execute code for day 3."""
     # Data
     example_report_code = _parse_diagnostic_report(_example_diagnostic_report)
     report_code = _parse_diagnostic_report_file()
@@ -157,3 +158,7 @@ if __name__ == "__main__":
     life_support = report.calc_life_support_rating()
     print_single_answer(DAY, 2, life_support)
     check_answer(1007985, life_support, DAY, 2)
+
+
+if __name__ == "__main__":
+    main()

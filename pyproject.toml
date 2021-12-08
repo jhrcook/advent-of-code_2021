@@ -4,18 +4,25 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "advent_of_code"
-authors = [{name = "Joshua Cook", email = "joshuacook0023@gmail.com"}]
-classifiers = ["License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"]
+authors = [{ name = "Joshua Cook", email = "joshuacook0023@gmail.com" }]
+readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
 dynamic = ["version", "description"]
+dependencies = [
+    "numpy >= 1.20.0",
+    "colorama >= 0.4.0",
+    "pydantic >= 1.8.0",
+    "typer >= 0.4.0",
+]
 
-[tool.mypy]
-python_version = "3.9"
-plugins = "pydantic.mypy"
-pretty = true
-ignore_missing_imports = true
-strict_optional = true
-no_implicit_optional = true
-warn_unused_ignores = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
-warn_no_return = true
+[project.optional-dependencies]
+test = ["mypy", "black", "flake8", "toml"]
+
+
+[project.urls]
+Source = "https://github.com/jhrcook/advent-of-code_2021"
+
+[project.scripts]
+aoc21 = "advent_of_code:main"

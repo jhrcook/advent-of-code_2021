@@ -141,7 +141,8 @@ def _read_instructions() -> list[CourseInstruction]:
     return instructions
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Execute code for day 2."""
     # Data.
     example_instructions = _parse_instructions(example_sub_course)
     course_instructions = _read_instructions()
@@ -169,3 +170,7 @@ if __name__ == "__main__":
     res = sub.hor * sub.depth
     print_single_answer(DAY, 1, res)
     check_answer(1880593125, res, day=DAY, part=2)
+
+
+if __name__ == "__main__":
+    main()

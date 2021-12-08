@@ -31,6 +31,7 @@ repos:
     rev: '6.1.1'
     hooks:
     -   id: pydocstyle
+        additional_dependencies: [toml]
 
 -   repo: https://github.com/PyCQA/flake8
     rev: '4.0.1'

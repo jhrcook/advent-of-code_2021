@@ -191,7 +191,8 @@ def get_last_to_win_bingo_card(
     return None
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Execute code for day 4."""
     # Data.
     ex_called_numbers, ex_bingo_cards = _parse_bingo_string(_example_bingo)
     called_numbers, bingo_cards = _parse_bingo_file()
@@ -223,3 +224,7 @@ if __name__ == "__main__":
     last_bingo_score = calculate_final_socre(last_card, last_num)
     print_single_answer(DAY, 2, last_bingo_score)
     check_answer(11377, last_bingo_score, DAY, 2)
+
+
+if __name__ == "__main__":
+    main()
