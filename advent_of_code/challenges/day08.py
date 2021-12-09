@@ -485,7 +485,7 @@ def get_display_value(segment_data: SevenSegmentData) -> SevenSegmentDisplay:
 
 
 def main() -> None:
-    """Run code for day 7 'Seven Segment Search'."""
+    """Run code for 'Day 8: Seven Segment Search'."""
     _check_segments_map()
 
     # Part 1.
