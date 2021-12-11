@@ -17,5 +17,5 @@ def print_single_answer(
         part (challenge_part): Part of the challenge (1 or 2).
         value (Union[bool, float, str]): Simple value to print.
     """
-    msg = f"Day {day} part {part} answer: {value}"
+    msg = f"Day {day:2d} part {part} answer: {value}"
     print(Fore.BLUE + Style.BRIGHT + msg + Style.RESET_ALL)
