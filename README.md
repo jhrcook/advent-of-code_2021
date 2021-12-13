@@ -23,6 +23,7 @@
 | 10  | [advent_of_code/challenges/day10.py](advent_of_code/challenges/day10.py) | ⭐️⭐️   |
 | 11  | [advent_of_code/challenges/day11.py](advent_of_code/challenges/day11.py) | ⭐️⭐️   |
 | 12  | [advent_of_code/challenges/day12.py](advent_of_code/challenges/day12.py) | ⭐️⭐️   |
+| 13  | [advent_of_code/challenges/day13.py](advent_of_code/challenges/day13.py) | ⭐️⭐️   |
 
 ## Details
 

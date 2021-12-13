@@ -221,9 +221,6 @@ def number_paths(caves: CaveConnections, mode: SearchMode) -> int:
     return len(_filter_out_bad_paths(all_paths))
 
 
-# ---- Part 2 ----
-
-
 def main() -> None:
     """Run code for 'Day 12: Passage Pathing'."""
     # Part 1.
