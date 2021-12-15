@@ -24,6 +24,15 @@
 | 11  | [advent_of_code/challenges/day11.py](advent_of_code/challenges/day11.py) | ⭐️⭐️   |
 | 12  | [advent_of_code/challenges/day12.py](advent_of_code/challenges/day12.py) | ⭐️⭐️   |
 | 13  | [advent_of_code/challenges/day13.py](advent_of_code/challenges/day13.py) | ⭐️⭐️   |
+| 14  | [advent_of_code/challenges/day14.py](advent_of_code/challenges/day14.py) | ⭐️⭐️   |
+
+**Help**
+
+I do my best to solve these puzzle on my own, but I do have a job and other responsibilities.
+So if a puzzle takes too long, I will find help from others working on Advent of Code 2021.
+Below are the attributions to these other programmers.
+
+1. I received help on part 2 of day 14 from [kresimir-lukin](https://github.com/kresimir-lukin/AdventOfCode2021/blob/main/day14.py).
 
 ## Details
 
