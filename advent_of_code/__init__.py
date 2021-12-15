@@ -18,6 +18,7 @@ from .challenges import (
     day11,
     day12,
     day13,
+    day14,
 )
 
 __version__ = "0.1"
@@ -38,6 +39,7 @@ _day_code_map: dict[int, Callable] = {
     11: day11.main,
     12: day12.main,
     13: day13.main,
+    14: day14.main,
 }
 
 
