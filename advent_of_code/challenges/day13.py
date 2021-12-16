@@ -7,9 +7,9 @@ import numpy as np
 from advent_of_code.checks import check_answer, check_example
 from advent_of_code.cli_output import print_single_answer
 from advent_of_code.data import get_data_path
-from advent_of_code.utils import DayInfo
+from advent_of_code.utils import PuzzleInfo
 
-PUZZLE_INFO = DayInfo(day=13, title="Transparent Origami")
+PUZZLE_INFO = PuzzleInfo(day=13, title="Transparent Origami")
 
 
 _example_instructions = """

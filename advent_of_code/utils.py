@@ -17,7 +17,7 @@ def assert_never(value: NoReturn) -> NoReturn:
 
 
 @dataclass(frozen=True)
-class DayInfo:
+class PuzzleInfo:
     """Information for a day's puzzle."""
 
     day: int

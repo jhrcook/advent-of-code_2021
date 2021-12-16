@@ -5,9 +5,9 @@ from typing import Counter, Union
 from advent_of_code.checks import check_answer, check_example
 from advent_of_code.cli_output import print_single_answer
 from advent_of_code.data import read_data
-from advent_of_code.utils import DayInfo
+from advent_of_code.utils import PuzzleInfo
 
-PUZZLE_INFO = DayInfo(day=14, title="Extended Polymerization")
+PUZZLE_INFO = PuzzleInfo(day=14, title="Extended Polymerization")
 
 _example_poylmer_data = """
 NNCB
