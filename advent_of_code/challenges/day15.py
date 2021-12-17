@@ -170,6 +170,7 @@ def main() -> None:
     print_single_answer(PI.day, 1, shortest_path)
     check_answer(707, shortest_path, day=PI.day, part=1)
 
+    # Part 2.
     # Example.
     ex_large_cave_map = build_out_full_map(_get_example_cave_data(), 5)
     ex_cave_graph, ex_target = cave_to_network(ex_large_cave_map)
