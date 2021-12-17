@@ -9,22 +9,23 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![pydocstyle](https://img.shields.io/badge/pydocstyle-enabled-AD4CD3)](http://www.pydocstyle.org/en/stable/)
 
-| Day | Code                                                                     | Status |
-| ---:| ------------------------------------------------------------------------ | ------ |
-| 1   | [advent_of_code/challenges/day01.py](advent_of_code/challenges/day01.py) | ⭐️⭐️   |
-| 2   | [advent_of_code/challenges/day02.py](advent_of_code/challenges/day02.py) | ⭐️⭐️   |
-| 3   | [advent_of_code/challenges/day03.py](advent_of_code/challenges/day03.py) | ⭐️⭐️   |
-| 4   | [advent_of_code/challenges/day04.py](advent_of_code/challenges/day04.py) | ⭐️⭐️   |
-| 5   | [advent_of_code/challenges/day05.py](advent_of_code/challenges/day05.py) | ⭐️⭐️   |
-| 6   | [advent_of_code/challenges/day06.py](advent_of_code/challenges/day06.py) | ⭐️⭐️   |
-| 7   | [advent_of_code/challenges/day07.py](advent_of_code/challenges/day07.py) | ⭐️⭐️   |
-| 8   | [advent_of_code/challenges/day08.py](advent_of_code/challenges/day08.py) | ⭐️⭐️   |
-| 9   | [advent_of_code/challenges/day09.py](advent_of_code/challenges/day09.py) | ⭐️⭐️   |
-| 10  | [advent_of_code/challenges/day10.py](advent_of_code/challenges/day10.py) | ⭐️⭐️   |
-| 11  | [advent_of_code/challenges/day11.py](advent_of_code/challenges/day11.py) | ⭐️⭐️   |
-| 12  | [advent_of_code/challenges/day12.py](advent_of_code/challenges/day12.py) | ⭐️⭐️   |
-| 13  | [advent_of_code/challenges/day13.py](advent_of_code/challenges/day13.py) | ⭐️⭐️   |
-| 14  | [advent_of_code/challenges/day14.py](advent_of_code/challenges/day14.py) | ⭐️⭐️   |
+| Day | Code                                                                     | Stars |
+| ---:| ------------------------------------------------------------------------ | ----- |
+| 1   | [advent_of_code/challenges/day01.py](advent_of_code/challenges/day01.py) | ⭐️⭐️  |
+| 2   | [advent_of_code/challenges/day02.py](advent_of_code/challenges/day02.py) | ⭐️⭐️  |
+| 3   | [advent_of_code/challenges/day03.py](advent_of_code/challenges/day03.py) | ⭐️⭐️  |
+| 4   | [advent_of_code/challenges/day04.py](advent_of_code/challenges/day04.py) | ⭐️⭐️  |
+| 5   | [advent_of_code/challenges/day05.py](advent_of_code/challenges/day05.py) | ⭐️⭐️  |
+| 6   | [advent_of_code/challenges/day06.py](advent_of_code/challenges/day06.py) | ⭐️⭐️  |
+| 7   | [advent_of_code/challenges/day07.py](advent_of_code/challenges/day07.py) | ⭐️⭐️  |
+| 8   | [advent_of_code/challenges/day08.py](advent_of_code/challenges/day08.py) | ⭐️⭐️  |
+| 9   | [advent_of_code/challenges/day09.py](advent_of_code/challenges/day09.py) | ⭐️⭐️  |
+| 10  | [advent_of_code/challenges/day10.py](advent_of_code/challenges/day10.py) | ⭐️⭐️  |
+| 11  | [advent_of_code/challenges/day11.py](advent_of_code/challenges/day11.py) | ⭐️⭐️  |
+| 12  | [advent_of_code/challenges/day12.py](advent_of_code/challenges/day12.py) | ⭐️⭐️  |
+| 13  | [advent_of_code/challenges/day13.py](advent_of_code/challenges/day13.py) | ⭐️⭐️  |
+| 14  | [advent_of_code/challenges/day14.py](advent_of_code/challenges/day14.py) | ⭐️⭐️  |
+| 15  | [advent_of_code/challenges/day15.py](advent_of_code/challenges/day15.py) | ⭐️⭐️  |
 
 **Help**
 
