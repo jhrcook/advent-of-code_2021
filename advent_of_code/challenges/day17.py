@@ -217,7 +217,23 @@ def plot_simulation(sim: SimulationResult, target: Area) -> None:
     return None
 
 
+def plot_simulations(sims: list[SimulationResult], target: Area) -> None:
+    """Plot the results of a simulation."""
+    for sim in sims:
+        x = [p[0] for p in sim.trajectory]
+        y = [p[1] for p in sim.trajectory]
+        plt.plot(x, y, "-", alpha=0.5)
+
+    box_x = [target.xmin, target.xmax, target.xmax, target.xmin, target.xmin]
+    box_y = [target.ymax, target.ymax, target.ymin, target.ymin, target.ymax]
+    plt.plot(box_x, box_y, c="k")
+
+    plt.show()
+    return None
+
+
 def _get_possible_x_velocities(target: Area) -> set[int]:
+    """Velocities along x for searching for the highest y position reached."""
     xs: set[int] = set()
     for n in range(target.xmax):
         total = sum([n - i for i in range(n)])
@@ -252,48 +268,103 @@ def find_highest_accurate_initial_velocity(target: Area) -> Point:
     return best_v
 
 
+def _vx_can_land_in_target(vx: int, target: Area) -> bool:
+    val = 0
+    for i in range(vx):
+        val += vx - i
+        if target.xmin <= val <= target.xmax:
+            return True
+    return False
+
+
+def _get_all_possible_initial_x_velocities(target: Area) -> set[int]:
+    xs: set[int] = set()
+    for vx in range(target.xmax + 1):
+        if _vx_can_land_in_target(vx, target):
+            xs.add(vx)
+    return xs
+
+
+def find_all_possible_initial_velocities(target: Area) -> set[Point]:
+    """Find all possible initial velocities that hit the target.
+
+    Args:
+        target (Area): Target area.
+
+    Returns:
+        set[Point]: Set of viable initial velocities.
+    """
+    max_y = find_highest_accurate_initial_velocity(target)
+    possible_vx = _get_all_possible_initial_x_velocities(target)
+    successful_hits: set[Point] = set()
+    for vx in possible_vx:
+        for vy in range(target.ymin, max_y[1] + 1):
+            v = (vx, vy)
+            res = run_simulation(v, target)
+            if res.hit:
+                successful_hits.add(v)
+    return successful_hits
+
+
 def main() -> None:
     """Run code for 'Day 17: Trick Shot'."""
-    _plot = False
     # Part 1.
+    _plot_1 = False
     # Examples.
     ex_area = parse_target_area_input(_example_target_area)
     res = run_simulation((7, 2), ex_area)
     check_example(True, res.hit and res.passed_through)
-    if _plot:
+    if _plot_1:
         plot_simulation(res, ex_area)
 
     res = run_simulation(v_initial=(6, 3), target_area=ex_area)
     check_example(True, res.hit and res.passed_through)
-    if _plot:
+    if _plot_1:
         plot_simulation(res, ex_area)
 
     res = run_simulation(v_initial=(9, 0), target_area=ex_area)
     check_example(True, res.hit and res.passed_through)
-    if _plot:
+    if _plot_1:
         plot_simulation(res, ex_area)
 
     res = run_simulation(v_initial=(17, -4), target_area=ex_area)
     check_example(True, (not res.hit) and res.passed_through)
-    if _plot:
+    if _plot_1:
         plot_simulation(res, ex_area)
 
     res = run_simulation(v_initial=(6, 9), target_area=ex_area)
     check_example(True, res.hit and res.passed_through)
-    if _plot:
+    if _plot_1:
         plot_simulation(res, ex_area)
 
     v = find_highest_accurate_initial_velocity(ex_area)
     check_example((6, 9), v)
 
+    # Real.
     target_area = get_puzzle_target_area()
     best_initial_v = find_highest_accurate_initial_velocity(target_area)
     res = run_simulation(best_initial_v, target_area)
     highest_y = res.highest_point[1]
-    if _plot:
+    if _plot_1:
         plot_simulation(res, target_area)
     print_single_answer(PI.day, 1, highest_y)
     check_answer(5565, highest_y, day=PI.day, part=1)
+
+    # Part 2.
+    _plot_2 = False
+    # Examples.
+    ex_target = parse_target_area_input(_example_target_area)
+    ex_possible_velocities = find_all_possible_initial_velocities(ex_target)
+    check_example(112, len(ex_possible_velocities))
+
+    # Real
+    possible_velocities = find_all_possible_initial_velocities(target_area)
+    num_possible_velocities = len(possible_velocities)
+    print_single_answer(PI.day, 2, num_possible_velocities)
+    check_answer(2118, num_possible_velocities, day=PI.day, part=2)
+    if _plot_2:
+        sims = [run_simulation(v, target_area) for v in possible_velocities]
+        plot_simulations(sims, target_area)
     return None
 
 
