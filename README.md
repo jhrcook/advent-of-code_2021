@@ -28,6 +28,7 @@
 | 15  | [advent_of_code/challenges/day15.py](advent_of_code/challenges/day15.py) | ⭐️⭐️  |
 | 16  | [advent_of_code/challenges/day16.py](advent_of_code/challenges/day16.py) | ⭐️⭐️  |
 | 17  | [advent_of_code/challenges/day17.py](advent_of_code/challenges/day17.py) | ⭐️⭐️  |
+| 18  | [advent_of_code/challenges/day18.py](advent_of_code/challenges/day18.py) | ⭐️⭐️  |
 
 **Help**
 
