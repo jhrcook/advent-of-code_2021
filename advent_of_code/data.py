@@ -29,3 +29,12 @@ def read_data(day: int, name: str = "input.txt") -> str:
     with open(get_data_path(day=day, name=name), "r") as file:
         data = "".join(line for line in file)
     return data
+
+
+def output_dir() -> Path:
+    """Path to the output directory.
+
+    Returns:
+        Path: Output directory for saving files.
+    """
+    return Path(__file__).parent.parent / "output"

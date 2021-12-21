@@ -30,6 +30,7 @@
 | 17  | [advent_of_code/challenges/day17.py](advent_of_code/challenges/day17.py) | ⭐️⭐️  |
 | 18  | [advent_of_code/challenges/day18.py](advent_of_code/challenges/day18.py) | ⭐️⭐️  |
 | 19  | [advent_of_code/challenges/day19.py](advent_of_code/challenges/day19.py) | ⭐️⭐️  |
+| 20  | [advent_of_code/challenges/day20.py](advent_of_code/challenges/day20.py) | ⭐️⭐️  |
 
 **Help**
 
@@ -38,6 +39,13 @@ So if a puzzle takes too long, I will find help from others working on Advent of
 Below are the attributions to these other programmers.
 
 1. I received help on part 2 of day 14 from [kresimir-lukin](https://github.com/kresimir-lukin/AdventOfCode2021/blob/main/day14.py).
+2. I received help on day 20 from [fridokus](https://github.com/fridokus/advent-of-code/blob/master/2021/20.py).
+
+## Visualizations
+
+### Day 20
+
+<img src="output/day20-p2.gif" width="500", alt="Day 20 output GIF">
 
 ## Details
 
