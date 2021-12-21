@@ -43,9 +43,15 @@ Below are the attributions to these other programmers.
 
 ## Visualizations
 
+### Day 17
+
+<img src="output/day17-p1-example-trajectory.jpeg" width=500 alt="example trajectory">
+
+<img src="output/day17-p2-simulations.jpeg" width=500, alt="all successful trajectories">
+
 ### Day 20
 
-<img src="output/day20-p2.gif" width="500", alt="Day 20 output GIF">
+<img src="output/day20-p2.gif" width=500 alt="Day 20 output GIF">
 
 ## Details
 

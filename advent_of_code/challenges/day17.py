@@ -2,13 +2,15 @@
 
 from dataclasses import dataclass
 from math import floor
+from pathlib import Path
+from typing import Optional
 
 import matplotlib.pyplot as plt
 import numpy as np
 
 from advent_of_code.checks import check_answer, check_example
 from advent_of_code.cli_output import print_single_answer
-from advent_of_code.data import read_data
+from advent_of_code.data import output_dir, read_data
 from advent_of_code.utils import PuzzleInfo
 
 PI = PuzzleInfo(day=17, title="Trick Shot")
@@ -185,7 +187,9 @@ def run_simulation(
     )
 
 
-def plot_simulation(sim: SimulationResult, target: Area) -> None:
+def plot_simulation(
+    sim: SimulationResult, target: Area, fpath: Optional[Path] = None
+) -> None:
     """Plot the results of a simulation."""
     x = [p[0] for p in sim.trajectory]
     y = [p[1] for p in sim.trajectory]
@@ -213,11 +217,17 @@ def plot_simulation(sim: SimulationResult, target: Area) -> None:
     title += f"hit: {sim.hit}, passed through: {sim.passed_through}"
     plt.title(title)
 
-    plt.show()
+    if fpath is None:
+        plt.show()
+    else:
+        plt.savefig(fpath)
+        plt.close()
     return None
 
 
-def plot_simulations(sims: list[SimulationResult], target: Area) -> None:
+def plot_simulations(
+    sims: list[SimulationResult], target: Area, fpath: Optional[Path] = None
+) -> None:
     """Plot the results of a simulation."""
     for sim in sims:
         x = [p[0] for p in sim.trajectory]
@@ -228,7 +238,11 @@ def plot_simulations(sims: list[SimulationResult], target: Area) -> None:
     box_y = [target.ymax, target.ymax, target.ymin, target.ymin, target.ymax]
     plt.plot(box_x, box_y, c="k")
 
-    plt.show()
+    if fpath is None:
+        plt.show()
+    else:
+        plt.savefig(fpath)
+        plt.close()
     return None
 
 
@@ -319,6 +333,9 @@ def main() -> None:
 
     res = run_simulation(v_initial=(6, 3), target_area=ex_area)
     check_example(True, res.hit and res.passed_through)
+    plot_simulation(
+        res, ex_area, fpath=output_dir() / "day17-p1-example-trajectory.jpeg"
+    )
     if _plot_1:
         plot_simulation(res, ex_area)
 
@@ -351,7 +368,6 @@ def main() -> None:
     check_answer(5565, highest_y, day=PI.day, part=1)
 
     # Part 2.
-    _plot_2 = False
     # Examples.
     ex_target = parse_target_area_input(_example_target_area)
     ex_possible_velocities = find_all_possible_initial_velocities(ex_target)
@@ -362,9 +378,10 @@ def main() -> None:
     num_possible_velocities = len(possible_velocities)
     print_single_answer(PI.day, 2, num_possible_velocities)
     check_answer(2118, num_possible_velocities, day=PI.day, part=2)
-    if _plot_2:
-        sims = [run_simulation(v, target_area) for v in possible_velocities]
-        plot_simulations(sims, target_area)
+    sims = [run_simulation(v, target_area) for v in possible_velocities]
+    plot_simulations(
+        sims, target_area, fpath=output_dir() / "day17-p2-simulations.jpeg"
+    )
     return None
 
 
