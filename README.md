@@ -32,6 +32,7 @@
 | 19  | [advent_of_code/challenges/day19.py](advent_of_code/challenges/day19.py) | ⭐️⭐️  |
 | 20  | [advent_of_code/challenges/day20.py](advent_of_code/challenges/day20.py) | ⭐️⭐️  |
 | 21  | [advent_of_code/challenges/day21.py](advent_of_code/challenges/day21.py) | ⭐️⭐️  |
+| 22  | [advent_of_code/challenges/day22.py](advent_of_code/challenges/day22.py) | ⭐️   | (will finish in the morning)
 
 **Help**
 
