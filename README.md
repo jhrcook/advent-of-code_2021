@@ -33,6 +33,7 @@
 | 20  | [advent_of_code/challenges/day20.py](advent_of_code/challenges/day20.py) | ⭐️⭐️  |
 | 21  | [advent_of_code/challenges/day21.py](advent_of_code/challenges/day21.py) | ⭐️⭐️  |
 | 22  | [advent_of_code/challenges/day22.py](advent_of_code/challenges/day22.py) | ⭐️⭐️  |
+| 23  | [advent_of_code/challenges/day23.py](advent_of_code/challenges/day23.py) | ⭐️   |
 
 **Help**
 
