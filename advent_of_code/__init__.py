@@ -4,7 +4,7 @@ from typing import Callable, Optional
 
 from typer import Typer
 
-from .challenges import (
+from .challenges import (  # day23,
     day01,
     day02,
     day03,
@@ -27,7 +27,7 @@ from .challenges import (
     day20,
     day21,
     day22,
-    day23,
+    day24,
 )
 
 __version__ = "0.1"
@@ -57,7 +57,8 @@ _day_code_map: dict[int, Callable] = {
     20: day20.main,
     21: day21.main,
     22: day22.main,
-    23: day23.main,
+    # 23: day23.main,
+    24: day24.main,
 }
 
 

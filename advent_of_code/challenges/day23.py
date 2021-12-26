@@ -9,7 +9,7 @@ from functools import cache
 from itertools import product
 from typing import Any, Final, Optional, Union
 
-from advent_of_code.checks import check_answer, check_example
+# from advent_of_code.checks import check_answer, check_example
 from advent_of_code.cli_output import print_single_answer
 from advent_of_code.data import read_data
 from advent_of_code.utils import PuzzleInfo
@@ -442,6 +442,7 @@ def main() -> None:
     print(f"min score: {min_score}")
     print_single_answer(PI.day, 2, min_score)
     # check_answer(15472, min_score, day=PI.day, part=1)
+    # 46444 too high
 
     return None
 
